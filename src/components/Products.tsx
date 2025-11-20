@@ -34,42 +34,55 @@ const products = [
 
 const Products = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Products Built</h2>
-        <p className="text-center text-muted-foreground mb-16 text-lg">Case Studies</p>
+    <section className="relative py-32 bg-background overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-neon-blue/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-electric-purple/5 rounded-full blur-3xl" />
+      
+      <div className="relative container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+            Products <span className="bg-gradient-primary bg-clip-text text-transparent">Built</span>
+          </h2>
+          <p className="text-muted-foreground text-lg mb-4">Case Studies</p>
+          <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
+        </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {products.map((product, index) => (
-            <Card key={index} className="group hover:shadow-glow transition-all duration-300 overflow-hidden">
-              <div className="aspect-video overflow-hidden">
+            <Card key={index} className="group hover:shadow-card-hover transition-all duration-500 overflow-hidden border-border/50 hover:border-electric-purple/30 bg-gradient-card backdrop-blur-sm">
+              <div className="aspect-video overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-10" />
                 <img 
                   src={product.image} 
                   alt={product.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
               
               <CardHeader>
-                <CardTitle className="text-2xl">{product.title}</CardTitle>
-                <CardDescription className="text-accent font-medium">
+                <CardTitle className="text-2xl group-hover:text-electric-purple transition-colors">{product.title}</CardTitle>
+                <CardDescription className="text-muted-foreground font-medium">
                   {product.subtitle}
                 </CardDescription>
               </CardHeader>
               
               <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground font-medium">
-                  Role: {product.role}
-                </p>
-                <p className="text-muted-foreground">{product.description}</p>
+                <div className="px-3 py-2 bg-electric-purple/5 rounded-lg border border-electric-purple/20">
+                  <p className="text-sm text-electric-purple font-semibold">
+                    {product.role}
+                  </p>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">{product.description}</p>
                 
                 <Button 
                   variant="outline" 
-                  className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+                  className="w-full group/btn hover:shadow-glow"
                   asChild
                 >
                   <a href={product.github} target="_blank" rel="noopener noreferrer">
-                    View on GitHub <ExternalLink className="ml-2 h-4 w-4" />
+                    View on GitHub 
+                    <ExternalLink className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </a>
                 </Button>
               </CardContent>
