@@ -50,16 +50,23 @@ export default {
         "electric-purple": "hsl(var(--electric-purple))",
         "neon-blue": "hsl(var(--neon-blue))",
         "dark-grey": "hsl(var(--dark-grey))",
+        "purple-light": "hsl(var(--purple-light))",
+        "blue-light": "hsl(var(--blue-light))",
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
+        "gradient-secondary": "var(--gradient-secondary)",
         "gradient-subtle": "var(--gradient-subtle)",
         "gradient-dark": "var(--gradient-dark)",
+        "gradient-card": "var(--gradient-card)",
+        "gradient-glass": "var(--gradient-glass)",
       },
       boxShadow: {
         "glow": "var(--shadow-glow)",
         "glow-blue": "var(--shadow-glow-blue)",
         "elegant": "var(--shadow-elegant)",
+        "card": "var(--shadow-card)",
+        "card-hover": "var(--shadow-card-hover)",
       },
       borderRadius: {
         lg: "var(--radius)",

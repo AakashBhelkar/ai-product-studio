@@ -39,28 +39,46 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">Skills</h2>
+    <section className="relative py-32 bg-background overflow-hidden">
+      <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-electric-purple/5 rounded-full blur-3xl" />
+      
+      <div className="relative container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+            Core <span className="bg-gradient-primary bg-clip-text text-transparent">Skills</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
+        </div>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {skillCategories.map((category, index) => (
-            <Card key={index} className="border-accent/20 hover:shadow-glow transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl text-accent">{category.category}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {category.skills.map((skill, i) => (
-                    <li key={i} className="flex gap-3 text-muted-foreground">
-                      <span className="text-accent mt-1">•</span>
-                      <span>{skill}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+          {skillCategories.map((category, index) => {
+            const colors = [
+              { border: 'border-electric-purple/30', hover: 'hover:border-electric-purple/60', shadow: 'hover:shadow-glow', bullet: 'text-electric-purple', bg: 'bg-electric-purple/5' },
+              { border: 'border-neon-blue/30', hover: 'hover:border-neon-blue/60', shadow: 'hover:shadow-glow-blue', bullet: 'text-neon-blue', bg: 'bg-neon-blue/5' },
+              { border: 'border-electric-purple/30', hover: 'hover:border-electric-purple/60', shadow: 'hover:shadow-glow', bullet: 'text-electric-purple', bg: 'bg-electric-purple/5' }
+            ];
+            const color = colors[index];
+            
+            return (
+              <Card key={index} className={`${color.border} ${color.hover} ${color.shadow} transition-all duration-500 bg-gradient-card backdrop-blur-sm group`}>
+                <CardHeader>
+                  <div className={`inline-block px-4 py-2 ${color.bg} rounded-lg mb-2`}>
+                    <CardTitle className={`text-2xl ${color.bullet}`}>{category.category}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {category.skills.map((skill, i) => (
+                      <li key={i} className="flex gap-3 text-muted-foreground group/item">
+                        <span className={`${color.bullet} mt-1 text-lg group-hover/item:scale-125 transition-transform`}>•</span>
+                        <span className="leading-relaxed">{skill}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

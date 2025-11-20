@@ -4,54 +4,65 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
+
 const Contact = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Let's Build Together</h2>
-        <p className="text-center text-muted-foreground mb-16 text-lg">
-          Ready to build AI-first products together.
-        </p>
+    <section className="relative py-32 bg-gradient-to-b from-background to-card/50 overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-purple/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl" />
+      
+      <div className="relative container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+            Let's Build <span className="bg-gradient-primary bg-clip-text text-transparent">Together</span>
+          </h2>
+          <p className="text-muted-foreground text-lg mb-4">
+            Ready to build AI-first products together.
+          </p>
+          <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
+        </div>
         
         <div className="max-w-2xl mx-auto">
-          <Card className="border-accent/20 shadow-glow">
+          <Card className="border-electric-purple/30 shadow-card-hover bg-gradient-card backdrop-blur-sm hover:border-electric-purple/50 transition-all duration-500">
             <CardHeader>
-              <CardTitle className="text-2xl">Send Message</CardTitle>
+              <CardTitle className="text-3xl">Send Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
+                  <Label htmlFor="name" className="text-foreground font-medium">Name</Label>
                   <Input 
                     id="name" 
                     placeholder="Your name"
-                    className="border-input focus:border-accent"
+                    className="border-border/50 focus:border-electric-purple bg-background/50 backdrop-blur-sm h-12 transition-all duration-300"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email" className="text-foreground font-medium">Email</Label>
                   <Input 
                     id="email" 
                     type="email" 
                     placeholder="your@email.com"
-                    className="border-input focus:border-accent"
+                    className="border-border/50 focus:border-electric-purple bg-background/50 backdrop-blur-sm h-12 transition-all duration-300"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message" className="text-foreground font-medium">Message</Label>
                   <Textarea 
                     id="message" 
                     placeholder="Tell me about your project..."
                     rows={6}
-                    className="border-input focus:border-accent"
+                    className="border-border/50 focus:border-electric-purple bg-background/50 backdrop-blur-sm transition-all duration-300"
                   />
                 </div>
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow"
+                  variant="glow"
+                  className="w-full h-14 text-lg font-semibold"
                   size="lg"
                 >
                   Send Message
@@ -64,7 +75,7 @@ const Contact = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+              className="h-14 px-8 text-lg font-semibold hover:shadow-glow"
             >
               Download My Resume (PDF)
             </Button>

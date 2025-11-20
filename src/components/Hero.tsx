@@ -4,7 +4,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-background pt-20">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-electric-purple/5 via-background to-neon-blue/5" />
       

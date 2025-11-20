@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 const techStack = [
   "OpenAI API",
@@ -18,33 +18,47 @@ const techStack = [
 
 const TechStack = () => {
   return (
-    <section className="py-24 bg-card">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">Tech I Use</h2>
+    <section className="relative py-32 bg-gradient-to-b from-background via-card/30 to-background overflow-hidden">
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-neon-blue/5 rounded-full blur-3xl" />
+      
+      <div className="relative container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+            Tech <span className="bg-gradient-primary bg-clip-text text-transparent">I Use</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
+        </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-7xl mx-auto">
           {techStack.map((tech, index) => (
             <Card 
               key={index}
-              className="p-6 text-center hover:shadow-glow-blue transition-all duration-300 hover:scale-105 border-accent/20"
+              className="p-6 text-center hover:shadow-card-hover transition-all duration-500 hover:scale-110 border-border/50 hover:border-neon-blue/40 bg-gradient-glass backdrop-blur-sm group relative overflow-hidden"
             >
-              <p className="font-semibold text-foreground">{tech}</p>
+              <div className="absolute inset-0 bg-gradient-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+              <p className="font-semibold text-foreground relative z-10 group-hover:text-neon-blue transition-colors">{tech}</p>
             </Card>
           ))}
         </div>
         
-        <div className="mt-16 text-center">
-          <a 
-            href="https://github.com/AakashBhelkar" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium text-lg transition-colors"
-          >
-            Visit GitHub → 
-          </a>
-          <p className="text-muted-foreground mt-2">
-            Featuring repos: Confirmly, DigiProPlat & more
-          </p>
+        <div className="mt-20 text-center">
+          <Card className="max-w-xl mx-auto bg-gradient-dark border-border/50 hover:shadow-glow transition-all duration-500">
+            <CardContent className="p-8">
+              <a 
+                href="https://github.com/AakashBhelkar" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 text-white hover:text-purple-light font-semibold text-xl transition-colors group"
+              >
+                <span className="text-2xl">→</span>
+                Visit GitHub
+                <span className="group-hover:translate-x-2 transition-transform">→</span>
+              </a>
+              <p className="text-white/60 mt-3 text-sm">
+                Featuring repos: Confirmly, DigiProPlat & more
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

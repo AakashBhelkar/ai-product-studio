@@ -53,23 +53,27 @@ const Blog = () => {
     : blogPosts.filter(post => post.category === selectedCategory);
   
   return (
-    <section className="py-24 bg-card">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Blog</h2>
-        <p className="text-center text-muted-foreground mb-12 text-lg">
-          Insights on product, AI, and building
-        </p>
+    <section className="relative py-32 bg-gradient-to-b from-background via-card/30 to-background overflow-hidden">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10" />
+      
+      <div className="relative container mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Blog</span>
+          </h2>
+          <p className="text-muted-foreground text-lg mb-4">
+            Insights on product, AI, and building
+          </p>
+          <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
+        </div>
         
-        <div className="flex flex-wrap gap-3 justify-center mb-12">
+        <div className="flex flex-wrap gap-3 justify-center mb-16">
           {categories.map((category) => (
             <Button
               key={category}
-              variant={selectedCategory === category ? "default" : "outline"}
+              variant={selectedCategory === category ? "glow" : "outline"}
               onClick={() => setSelectedCategory(category)}
-              className={selectedCategory === category 
-                ? "bg-accent hover:bg-accent/90 text-accent-foreground" 
-                : "border-accent/50 text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-              }
+              className="transition-all duration-300"
             >
               {category}
             </Button>
@@ -78,16 +82,19 @@ const Blog = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {filteredPosts.map((post, index) => (
-            <Card key={index} className="hover:shadow-glow transition-all duration-300 hover:scale-105">
+            <Card key={index} className="hover:shadow-card-hover transition-all duration-500 hover:scale-105 border-border/50 hover:border-electric-purple/30 bg-gradient-card backdrop-blur-sm group">
               <CardHeader>
-                <div className="text-sm text-accent font-medium mb-2">{post.category}</div>
-                <CardTitle className="text-xl">{post.title}</CardTitle>
-                <CardDescription>{post.date}</CardDescription>
+                <div className="inline-block px-3 py-1 bg-gradient-primary text-white rounded-full text-xs font-semibold mb-3">
+                  {post.category}
+                </div>
+                <CardTitle className="text-xl leading-tight group-hover:text-electric-purple transition-colors">{post.title}</CardTitle>
+                <CardDescription className="text-sm">{post.date}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-                <Button variant="link" className="p-0 text-accent">
-                  Read More →
+                <p className="text-muted-foreground mb-6 leading-relaxed">{post.excerpt}</p>
+                <Button variant="link" className="p-0 text-electric-purple hover:text-electric-purple/80 group/btn">
+                  Read More 
+                  <span className="inline-block group-hover/btn:translate-x-1 transition-transform ml-1">→</span>
                 </Button>
               </CardContent>
             </Card>
