@@ -14,23 +14,23 @@ const experiments = [
 
 const Experiments = () => {
   return (
-    <section className="relative py-32 bg-gradient-to-b from-card/50 to-background overflow-hidden">
+    <section className="relative py-16 sm:py-24 md:py-32 bg-gradient-to-b from-card/50 to-background overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--electric-purple)/0.05),transparent_50%)]" />
       
-      <div className="relative container mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-primary rounded-2xl flex items-center justify-center animate-pulse">
-              <Lightbulb className="w-6 h-6 text-white" />
+      <div className="relative container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-2xl flex items-center justify-center animate-pulse">
+              <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
               Experiments <span className="bg-gradient-primary bg-clip-text text-transparent">& Labs</span>
             </h2>
           </div>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
           {experiments.map((experiment, index) => (
             <Card 
               key={index}

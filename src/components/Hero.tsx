@@ -12,10 +12,10 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)] opacity-20" />
       
       {/* Floating orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-purple/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-blue/20 rounded-full blur-3xl animate-pulse [animation-delay:1s]" />
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-electric-purple/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-neon-blue/20 rounded-full blur-3xl animate-pulse [animation-delay:1s]" />
       
-      <div className="relative z-10 container mx-auto px-6 py-32">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-purple/10 border border-electric-purple/20 mb-8 backdrop-blur-sm">
@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
           
           {/* Main headline */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-[1.1] tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 sm:mb-8 leading-[1.1] tracking-tight">
             <span className="block text-foreground">Product Owner</span>
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
               building AI-driven
@@ -33,11 +33,11 @@ const Hero = () => {
           </h1>
           
           {/* Description */}
-          <div className="max-w-3xl mb-12 space-y-4">
-            <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed font-medium">
+          <div className="max-w-3xl mb-8 sm:mb-12 space-y-3 sm:space-y-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 leading-relaxed font-medium">
               Aakash Bhelkar — Product Manager, No-code Builder, and AI-first SaaS Strategist.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               I design scalable systems, deep product logic, and automation-driven experiences.
               I focus on the "why" and "how" of the product — and let AI help with the "code."
             </p>
@@ -65,7 +65,7 @@ const Hero = () => {
           </div>
           
           {/* Feature cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl">
             <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border hover:border-electric-purple/50 transition-colors">
               <Code2 className="w-8 h-8 text-electric-purple mb-3" />
               <h3 className="font-semibold text-foreground mb-2">No-Code Builder</h3>
