@@ -34,21 +34,21 @@ const products = [
 
 const Products = () => {
   return (
-    <section className="relative py-32 bg-background overflow-hidden">
+    <section className="relative py-16 sm:py-24 md:py-32 bg-background overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-neon-blue/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-electric-purple/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-0 w-64 h-64 md:w-96 md:h-96 bg-neon-blue/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-0 w-64 h-64 md:w-96 md:h-96 bg-electric-purple/5 rounded-full blur-3xl" />
       
-      <div className="relative container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+      <div className="relative container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Products <span className="bg-gradient-primary bg-clip-text text-transparent">Built</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-4">Case Studies</p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {products.map((product, index) => (
             <Card key={index} className="group hover:shadow-card-hover transition-all duration-500 overflow-hidden border-border/50 hover:border-electric-purple/30 bg-gradient-card backdrop-blur-sm">
               <div className="aspect-video overflow-hidden relative">

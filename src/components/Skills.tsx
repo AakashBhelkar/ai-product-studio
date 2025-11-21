@@ -39,18 +39,18 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section className="relative py-32 bg-background overflow-hidden">
-      <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-electric-purple/5 rounded-full blur-3xl" />
+    <section className="relative py-16 sm:py-24 md:py-32 bg-background overflow-hidden">
+      <div className="absolute bottom-0 right-1/3 w-64 h-64 md:w-96 md:h-96 bg-electric-purple/5 rounded-full blur-3xl" />
       
-      <div className="relative container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+      <div className="relative container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Core <span className="bg-gradient-primary bg-clip-text text-transparent">Skills</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {skillCategories.map((category, index) => {
             const colors = [
               { border: 'border-electric-purple/30', hover: 'hover:border-electric-purple/60', shadow: 'hover:shadow-glow', bullet: 'text-electric-purple', bg: 'bg-electric-purple/5' },

@@ -7,17 +7,17 @@ import { Label } from "@/components/ui/label";
 
 const Contact = () => {
   return (
-    <section className="relative py-32 bg-gradient-to-b from-background to-card/50 overflow-hidden">
+    <section className="relative py-16 sm:py-24 md:py-32 bg-gradient-to-b from-background to-card/50 overflow-hidden">
       {/* Background effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-purple/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-electric-purple/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-neon-blue/10 rounded-full blur-3xl" />
       
-      <div className="relative container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+      <div className="relative container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Let's Build <span className="bg-gradient-primary bg-clip-text text-transparent">Together</span>
           </h2>
-          <p className="text-muted-foreground text-lg mb-4">
+          <p className="text-muted-foreground text-base sm:text-lg mb-4">
             Ready to build AI-first products together.
           </p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
@@ -25,11 +25,11 @@ const Contact = () => {
         
         <div className="max-w-2xl mx-auto">
           <Card className="border-electric-purple/30 shadow-card-hover bg-gradient-card backdrop-blur-sm hover:border-electric-purple/50 transition-all duration-500">
-            <CardHeader>
-              <CardTitle className="text-3xl">Send Message</CardTitle>
+            <CardHeader className="p-4 sm:p-6">
+              <CardTitle className="text-2xl sm:text-3xl">Send Message</CardTitle>
             </CardHeader>
-            <CardContent>
-              <form className="space-y-6">
+            <CardContent className="p-4 sm:p-6">
+              <form className="space-y-4 sm:space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-foreground font-medium">Name</Label>
                   <Input 
@@ -71,11 +71,11 @@ const Contact = () => {
             </CardContent>
           </Card>
           
-          <div className="mt-12 text-center">
+          <div className="mt-8 sm:mt-12 text-center">
             <Button 
               size="lg"
               variant="outline"
-              className="h-14 px-8 text-lg font-semibold hover:shadow-glow"
+              className="h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold hover:shadow-glow w-full sm:w-auto"
               asChild
             >
               <a href="/Aakash_Bhelkar_Resume.pdf" download="Aakash_Bhelkar_Resume.pdf">

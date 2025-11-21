@@ -53,34 +53,35 @@ const Blog = () => {
     : blogPosts.filter(post => post.category === selectedCategory);
   
   return (
-    <section className="relative py-32 bg-gradient-to-b from-background via-card/30 to-background overflow-hidden">
+    <section className="relative py-16 sm:py-24 md:py-32 bg-gradient-to-b from-background via-card/30 to-background overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10" />
       
-      <div className="relative container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+      <div className="relative container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             <span className="bg-gradient-primary bg-clip-text text-transparent">Blog</span>
           </h2>
-          <p className="text-muted-foreground text-lg mb-4">
+          <p className="text-muted-foreground text-base sm:text-lg mb-4">
             Insights on product, AI, and building
           </p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
         </div>
         
-        <div className="flex flex-wrap gap-3 justify-center mb-16">
+        <div className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-12 sm:mb-16">
           {categories.map((category) => (
             <Button
               key={category}
               variant={selectedCategory === category ? "glow" : "outline"}
               onClick={() => setSelectedCategory(category)}
-              className="transition-all duration-300"
+              className="transition-all duration-300 text-xs sm:text-sm"
+              size="sm"
             >
               {category}
             </Button>
           ))}
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {filteredPosts.map((post, index) => (
             <Card key={index} className="hover:shadow-card-hover transition-all duration-500 hover:scale-105 border-border/50 hover:border-electric-purple/30 bg-gradient-card backdrop-blur-sm group">
               <CardHeader>
