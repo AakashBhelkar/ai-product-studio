@@ -76,8 +76,11 @@ const Contact = () => {
               size="lg"
               variant="outline"
               className="h-14 px-8 text-lg font-semibold hover:shadow-glow"
+              asChild
             >
-              Download My Resume (PDF)
+              <a href="/Aakash_Bhelkar_Resume.pdf" download="Aakash_Bhelkar_Resume.pdf">
+                Download My Resume (PDF)
+              </a>
             </Button>
           </div>
         </div>
