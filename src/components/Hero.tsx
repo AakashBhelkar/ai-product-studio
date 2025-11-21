@@ -52,13 +52,16 @@ const Hero = () => {
               View My Work
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-border hover:bg-accent hover:text-accent-foreground"
-            >
+          <Button 
+            size="lg" 
+            variant="outline"
+            className="border-border hover:bg-accent hover:text-accent-foreground"
+            asChild
+          >
+            <a href="/Aakash_Bhelkar_Resume.pdf" download="Aakash_Bhelkar_Resume.pdf">
               Download Resume
-            </Button>
+            </a>
+          </Button>
           </div>
           
           {/* Feature cards */}
